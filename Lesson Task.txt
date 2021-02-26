@@ -1,0 +1,70 @@
+#include <iostream>
+using namespace std;
+
+class Line
+{
+public:
+	class Point
+	{
+		int x{};
+		int y{};
+	public:
+		Point() { }
+		void setX(int x) { this->x = x; }
+		void setY(int y) { this->y = y; }
+		int getX() { return this->x; }
+		int getY() { return this->y; }
+	};
+private:
+	Point A;
+	Point B;
+public:
+	Line(int x, int y, int x1, int y1)
+	{
+		A.setX(x); A.setY(y);
+		B.setX(x1); B.setY(y1);
+	}
+	void printCoordinates()
+	{
+		printf("A.x-> %d \t", A.getX()); printf("A.y-> %d\n", A.getY());
+		printf("B.x-> %d \t", B.getX()); printf("B.y-> %d \n", B.getY());
+	}
+	void printPointA()
+	{
+		printf("A.x-> %d \t", A.getX()); printf("A.y-> %d\n", A.getY());
+	}
+	void editPointA(int newX, int newY)
+	{
+		A.setX(newX); A.setY(newY);
+	}
+	void printPointB()
+	{
+		printf("B.x-> %d \t", B.getX()); printf("B.y-> %d\n", B.getY());
+	}
+	void editPointB(int newX, int newY)
+	{
+		B.setX(newX); B.setY(newY);
+	}
+	int calculateDistance()
+	{
+		int b = A.getY() - B.getY();
+		int a = B.getX() - B.getX();
+		a = a * a; b = b * b;
+		int c = a + b;
+		return c;
+	}
+};
+
+int main()
+{
+	Line l(4, 6, 8, 3);
+	l.printCoordinates();
+	cout << endl;
+	l.editPointA(7, 9);
+	l.printPointA();
+	cout << endl;
+	l.editPointB(4, 1);
+	l.printPointB();
+	cout << endl;
+	cout << l.calculateDistance();
+}
