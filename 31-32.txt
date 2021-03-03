@@ -1,0 +1,108 @@
+#include <iostream>
+using namespace std;
+
+class Pet
+{
+protected:
+	string _name{};
+	int _eye{};
+	int _foot{};
+	int _teeth{};
+public:
+	Pet(){}
+	Pet(string name, int eye, int foot, int teeth) : _name(name), _eye(eye), _foot(foot), _teeth(teeth) {}
+};
+
+class Dog : public Pet
+{
+	int _height = 0;
+public:
+	Dog() {}
+	Dog(string name, int eye, int foot, int teeth, int height) : Pet(name, eye, foot, teeth) { _height = height; }
+	void editInfo(string name, int eye, int foot, int teeth, int height)
+	{
+		_name = name;
+		_eye = eye;
+		_foot = foot;
+		_teeth = teeth;
+		_height = height;
+	}
+	void printInfo()
+	{
+		cout << "--------------Dog-------------" << endl;
+		cout << "Name: " << _name << endl;
+		cout << "Eye: " << _eye << endl;
+		cout << "Foot: " << _foot << endl;
+		cout << "Teeth: " << _teeth << endl;
+		cout << "Height: " << _height << endl;
+	}
+};
+
+class Cat : public Pet
+{
+	int _speed = 0;
+public:
+	Cat() {}
+	Cat(string name, int eye, int foot, int teeth, int speed) : Pet(name, eye, foot, teeth) { _speed = speed; }
+	void editInfo(string name, int eye, int foot, int teeth, int speed)
+	{
+		_name = name;
+		_eye = eye;
+		_foot = foot;
+		_teeth = teeth;
+		_speed = speed;
+	}
+	void printInfo()
+	{
+		cout << "--------------Cat-------------" << endl;
+		cout << "Name: " << _name << endl;
+		cout << "Eye: " << _eye << endl;
+		cout << "Foot: " << _foot << endl;
+		cout << "Teeth: " << _teeth << endl;
+		cout << "Speed: " << _speed << endl;
+	}
+};
+
+class Parrot :public Pet
+{
+	int _volume = 0;
+public:
+	Parrot() {}
+	Parrot(string name, int eye, int foot, int teeth, int volume) : Pet(name, eye, foot, teeth) { _volume = volume; }
+	void editInfo(string name, int eye, int foot, int teeth, int volume)
+	{
+		_name = name;
+		_eye = eye;
+		_foot = foot;
+		_teeth = teeth;
+		_volume = volume;
+	}
+	void printInfo()
+	{
+		cout << "--------------Parrot-------------" << endl;
+		cout << "Name: " << _name << endl;
+		cout << "Eye: " << _eye << endl;
+		cout << "Foot: " << _foot << endl;
+		cout << "Teeth: " << _teeth << endl;
+		cout << "Volume: " << _volume << endl;
+	}
+};
+int main()
+{
+	Dog f("Kaptan", 2, 4, 18, 90);
+	f.printInfo(); cout << endl;
+	f.editInfo("Patron", 2, 4, 21, 98);
+	f.printInfo(); cout << endl;
+	cout << "-----------------------------------" << endl;
+
+	Cat c("Bello", 2, 4, 15, 5);
+	c.printInfo(); cout << endl;
+	c.editInfo("Shadow", 2, 4, 18, 7);
+	c.printInfo(); cout << endl;
+	cout << "-----------------------------------" << endl;
+
+	Parrot p("Arik", 2, 2, 0, 100);
+	p.printInfo(); cout << endl;
+	p.editInfo("Yasha", 2, 2, 0, 80);
+	p.printInfo(); cout << endl;
+}
