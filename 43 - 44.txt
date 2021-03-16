@@ -1,0 +1,45 @@
+Sual: enctypted.txt faylinda metni decrypt edin (deshifreleyin) ve tapshirigin davamini orada goreceksiniz!
+
+Cavab ve sual: HERKESE SALAM BU BIR SHIFRELENMISH METNDIR. EGER BUNU DECRYPT EDE BILDINIZSE O ZAMAN SIZI TEBRIK EDIREM ELA NETICEDIR. INDI ISE BU METNI DORD OFFSET ILE SHIFRELEYIB EV TAPSHIRIGINA ALINAN METNI GONDERIN UGURLAR
+
+	Code:
+
+	ifstream fin("encrypted.txt");
+	ofstream fout("decrypt.txt");
+	string count; int c = 0;
+	getline(fin, count);
+	for (int i = 0; i < count.size(); i++)
+	{
+		if (count[i] == '.' || count[i] == ' ') { fout << count[i]; } 
+		else if (count[i] == 'A') { count[i] = 'X'; fout << count[i]; } 
+		else if (count[i] == 'B') { count[i] = 'Y'; fout << count[i]; } 
+		else if (count[i] == 'C') { count[i] = 'Z'; fout << count[i]; }
+		else { c = count[i]; c -= 3; count[i] = c; fout << count[i]; } 
+	}
+	fin.close();
+	fout.close();
+
+
+
+Cavab: 
+DANGAOA OWHWI XQ XEN ODEBNAHAJIEOD IAPJZEN. ACAN XQJQ ZAYNULP AZA XEHZEJEVOA K VWIWJ OEVE PAXNEG AZENAI AHW JAPEYAZEN. EJZE EOA XQ IAPJE ZKNZ KBBOAP EHA ODEBNAHAUEX AR PWLODENECEJW WHEJWJ IAPJE CKJZANEJ QCQNHWN
+
+ 
+
+     Code: 
+
+    ifstream fin("decrypt.txt");
+	ofstream fout("decrypt1.txt");
+	string count; int c = 0;
+	getline(fin, count);
+	for (int i = 0; i < count.size(); i++)
+	{
+		if (count[i] == '.' || count[i] == ' ') { fout << count[i]; } 
+		else if (count[i] == 'A') { count[i] = 'W'; fout << count[i]; } 
+		else if (count[i] == 'B') { count[i] = 'X'; fout << count[i]; } 
+		else if (count[i] == 'C') { count[i] = 'Y'; fout << count[i]; }
+		else if (count[i] == 'D') { count[i] = 'Z'; fout << count[i]; }
+		else { c = count[i]; c -= 4; count[i] = c; fout << count[i]; } 
+	}
+	fin.close();
+	fout.close();
